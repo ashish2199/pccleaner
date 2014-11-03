@@ -13,7 +13,7 @@ import javax.swing.filechooser.FileSystemView;
 import javax.swing.tree.*;
 import org.apache.commons.io.FileUtils;
 
-
+    
 public class gui extends javax.swing.JFrame {
 private ProgressInfinite taskInfinite;
 private ProgressInfinite2 taskInfinite2;
@@ -305,7 +305,7 @@ String[] fexts ={
 public void show_text() // for result test area
 {
     try{
-         FileReader fr = new FileReader("C:/filenames.txt");
+         FileReader fr = new FileReader("C:\\fpc fileslist\\filenames.txt");
             BufferedReader br = new BufferedReader(fr);
             String line;
             while ((line = br.readLine()) != null) 
@@ -460,7 +460,7 @@ public  void size(String filename)
          }
          
          while (pauseProcessing) {
-            try {
+            try { 
                 Thread.sleep(50);
                if (abortProcessing) {
                   return false;
@@ -554,10 +554,10 @@ public static int getFolderCount(File dir) {
         @Override
        
         public Void doInBackground() throws InterruptedException {
-            jProgressBar2.show();
-            progressing2.show();
-            pendrive_status.show();
-            per2.show();
+            jProgressBar2.setVisible(true);
+            progressing2.setVisible(true);
+            pendrive_status.setVisible(true);
+            per2.setVisible(true);
             AbstractListModel model = (AbstractListModel) jList2.getModel();
          String str= jList2.getSelectedValue().toString();
          String selected =  str.substring(16, 19);  
@@ -586,7 +586,7 @@ public static int getFolderCount(File dir) {
         {   jProgressBar2.setValue(100);
             per2.setText("100%");
             JOptionPane.showMessageDialog(null, "Format Completed ",null,JOptionPane.INFORMATION_MESSAGE ,new ImageIcon("check-icon.png"));
-            progressing2.hide();
+            progressing2.setVisible(false);
         }
         
         public void file_delete(File dir)
@@ -649,12 +649,19 @@ public static int getFolderCount(File dir) {
               
               if(quickscan.isSelected())      
           {
-              
-            FileWriter fw = new FileWriter("C:/filenames.txt");
+             
+            File f1 = new File("C:\\fpc fileslist\\filenames.txt");
+            if(f1.isFile()){
+            JOptionPane.showMessageDialog(null,"filenames.txt it is a file ");
+            }else
+            {
+            JOptionPane.showMessageDialog(null,"ERROR   filenames.txt it is not a file ");
+            }
+            FileWriter fw = new FileWriter("C:\\fpc fileslist\\filenames.txt");
             BufferedWriter bw = new BufferedWriter(fw);
             
            
-            DefaultListModel list = new DefaultListModel();
+            DefaultListModel<File> list = new DefaultListModel<File>();
             jList1.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
             
             String tmp_path=System.getProperty("java.io.tmpdir");
@@ -705,8 +712,14 @@ public static int getFolderCount(File dir) {
               
               if(custom_rbtn.isSelected())      
           {
-              
-            FileWriter fw = new FileWriter("C:/filenames.txt");
+            File f1 = new File("C:\\fpc fileslist\\filenames.txt");
+            if(f1.isFile()){
+            JOptionPane.showMessageDialog(null,"filenames.txt it is a file ");
+            }else
+            {
+            JOptionPane.showMessageDialog(null,"ERROR   filenames.txt it is not a file ");
+            }  
+            FileWriter fw = new FileWriter("C:\\fpc fileslist\\filenames.txt");
             BufferedWriter bw = new BufferedWriter(fw);
             
            
@@ -774,7 +787,7 @@ public static int getFolderCount(File dir) {
                   if(custom_rbtn.isSelected())      
           {
               
-            FileWriter fw = new FileWriter("C:/filenames.txt");
+            FileWriter fw = new FileWriter("C:\\fpc fileslist\\filenames.txt");
             BufferedWriter bw = new BufferedWriter(fw);
             
            
@@ -843,7 +856,7 @@ public static int getFolderCount(File dir) {
             if(full_rbtn.isSelected())
             
     {
-            FileWriter fw = new FileWriter("C:/filenames.txt");
+            FileWriter fw = new FileWriter("C:\\fpc fileslist\\filenames.txt");
             BufferedWriter bw = new BufferedWriter(fw);
             
            
@@ -894,10 +907,10 @@ public static int getFolderCount(File dir) {
         {    scanpane.getRootPane().setDefaultButton(btn_result); 
             jProgressBar1.setValue(100);
                percent.setText("100%");
-            pause.hide();
-            resume.hide();
-            stop.hide();
-            scanninggif.hide();
+            pause.setVisible(false);
+            resume.setVisible(false);
+            stop.setVisible(false);
+            scanninggif.setVisible(false);
             btn_result.setVisible(true);          
              JOptionPane.showMessageDialog(null, "Task completed",null,JOptionPane.INFORMATION_MESSAGE,new ImageIcon("check-icon.png"));
              recoverspace=recoverspace/1024*1024;
@@ -922,7 +935,7 @@ public static int getFolderCount(File dir) {
              scanerrors.setText(""+errors);
         try
         {
-        FileWriter fw = new FileWriter("C:/lastscaned_date.txt");
+        FileWriter fw = new FileWriter("C:\\fpc fileslist\\lastscaned_date.txt");
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(last_date);
               
@@ -936,7 +949,7 @@ public static int getFolderCount(File dir) {
         }  
          
         try{
-            FileWriter fw = new FileWriter("C:/lastscaned_errors.txt");
+            FileWriter fw = new FileWriter("C:\\fpc fileslist\\lastscaned_errors.txt");
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write("\n"+last_errors);
               
@@ -952,7 +965,7 @@ public static int getFolderCount(File dir) {
     public void stored_laststatus()
     {
         try{
-            FileReader fr = new FileReader("C:/lastscaned_date.txt");
+            FileReader fr = new FileReader("C:\\fpc fileslist\\lastscaned_date.txt");
             BufferedReader br = new BufferedReader(fr);
             String line = null;
             int n;
@@ -969,7 +982,7 @@ public static int getFolderCount(File dir) {
                  }
         
         try{
-            FileReader fr = new FileReader("C:/lastscaned_errors.txt");
+            FileReader fr = new FileReader("C:\\fpc fileslist\\vlastscaned_errors.txt");
             BufferedReader br = new BufferedReader(fr);
             String line = null;
             int n;
@@ -1011,13 +1024,13 @@ public static int getFolderCount(File dir) {
         quickscan.setSelected(true);
         quicktab();
         jTabbedPane1.removeTabAt(6);
-        per2.hide();
-        jProgressBar2.hide();
-        progressing2.hide();
-        pendrive_status.hide();
+        per2.setVisible(false);
+        jProgressBar2.setVisible(false);
+        progressing2.setVisible(false);
+        pendrive_status.setVisible(false);
         
-        ext_txt.hide();
-       lbl_userext.hide();
+        ext_txt.setVisible(false);
+       lbl_userext.setVisible(false);
 //jTabbedPane1.setEnabledAt(2, false);
         
         //jTabbedPane1.setc//
@@ -2594,8 +2607,8 @@ public static int getFolderCount(File dir) {
         if(chk_ext.isSelected()){
            ext_no=1;
             custom_rbtn.setSelected(true);
-            quicktext2.hide();
-            quickstart_bu.hide();
+            quicktext2.setVisible(false);
+            quickstart_bu.setVisible(false);
             
             
             jTabbedPane1.setEnabledAt(1, true);
@@ -2611,8 +2624,8 @@ public static int getFolderCount(File dir) {
             String tempext = fexts[p].toLowerCase();
             fexts[p]=tempext;    
             
-          ext_txt.show();
-          lbl_userext.show();
+          ext_txt.setVisible(true);
+          lbl_userext.setVisible(true);
           
         } 
         
@@ -2748,7 +2761,7 @@ public static int getFolderCount(File dir) {
         //   jTabbedPane1.setEnabledAt(2, true);
 
         try{        //JOptionPane.showMessageDialog(null, "File reading started");
-            FileReader fr = new FileReader("C:/filenames.txt");
+            FileReader fr = new FileReader("C:\\filenames.txt");
             BufferedReader br = new BufferedReader(fr);
             String line ;
             while ((line = br.readLine()) != null)
@@ -2762,7 +2775,7 @@ public static int getFolderCount(File dir) {
         {
             resultspane.getRootPane().setDefaultButton(btn_editresult);
         }
-        //resultspane.hide();
+        //resultspane.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_resultActionPerformed
 
@@ -2794,29 +2807,29 @@ public static int getFolderCount(File dir) {
                 taskInfinite = new ProgressInfinite();
                 taskInfinite.execute();
                 pause.setSelected(false);
-                pause.show();
-                resume.show();
-                stop.show();
-                scanninggif.show();
-                choose_btn.hide();
-                directorytxt.hide();
-                choose_txtlbl.hide();
-                scanninggif.show();
-                startscan_btn.hide();
+                pause.setVisible(true);
+                resume.setVisible(true);
+                stop.setVisible(true);
+                scanninggif.setVisible(true);
+                choose_btn.setVisible(false);
+                directorytxt.setVisible(false);
+                choose_txtlbl.setVisible(false);
+                scanninggif.setVisible(true);
+                startscan_btn.setVisible(false);
             }
         }
         if(full_rbtn.isSelected()||quickscan.isSelected()){
             taskInfinite = new ProgressInfinite();
             taskInfinite.execute();
-            pause.show();
-            resume.show();
-            stop.show();
-            scanninggif.show();
-            choose_btn.hide();
-            directorytxt.hide();
-            choose_txtlbl.hide();
-            scanninggif.show();
-            startscan_btn.hide();
+            pause.setVisible(true);
+            resume.setVisible(true);
+            stop.setVisible(true);
+            scanninggif.setVisible(true);
+            choose_btn.setVisible(false);
+            directorytxt.setVisible(false);
+            choose_txtlbl.setVisible(false);
+            scanninggif.setVisible(true);
+            startscan_btn.setVisible(false);
         }
         /*if(chk_ext.isSelected()){
         if(directorytxt.getText().equals("")){
@@ -2826,29 +2839,29 @@ public static int getFolderCount(File dir) {
             }
             else { 
 
-            directorytxt.show();
-            choose_btn.show();
-            choose_txtlbl.hide();
-            startscan_btn.show();
+            directorytxt.setVisible(true);
+            choose_btn.setVisible(true);
+            choose_txtlbl.setVisible(false);
+            startscan_btn.setVisible(true);
             
                String[] fexts=null;
                String[] exts=fexts.clone();
                 abortProcessing = false;
                 pauseProcessing = false;
-                lbl_freespace.hide();
-                lbl_freespacegained.hide();
+                lbl_freespace.setVisible(false);
+                lbl_freespacegained.setVisible(false);
                 taskInfinite = new ProgressInfinite();
                 taskInfinite.execute();
                 pause.setSelected(false);
-                pause.show();
-                resume.show();
-                stop.show();
-                scanninggif.show();
-                choose_btn.hide();
-                directorytxt.hide();
-                choose_txtlbl.hide();
-                scanninggif.show();
-                startscan_btn.hide();
+                pause.setVisible(true);
+                resume.setVisible(true);
+                stop.setVisible(true);
+                scanninggif.setVisible(true);
+                choose_btn.setVisible(false);
+                directorytxt.setVisible(false);
+                choose_txtlbl.setVisible(false);
+                scanninggif.setVisible(true);
+                startscan_btn.setVisible(false);
             }
         
         }*/
@@ -2873,8 +2886,8 @@ public static int getFolderCount(File dir) {
         if(full_rbtn.isSelected()||custom_rbtn.isSelected()||quickscan.isSelected())
         {
             
-            quicktext2.hide();
-            quickstart_bu.hide();
+            quicktext2.setVisible(false);
+            quickstart_bu.setVisible(false);
             
             
             jTabbedPane1.setEnabledAt(1, true);
@@ -2991,21 +3004,21 @@ public static int getFolderCount(File dir) {
     public  void quicktab()
   {   
     
-        startscan_btn.show();
-              resume.hide();
-              stop.hide();
-              pause.hide();
-              btn_result.hide();
-              directorytxt.hide();
-               choose_btn.hide();
-               scanninggif.hide();
+        startscan_btn.setVisible(true);
+              resume.setVisible(false);
+              stop.setVisible(false);
+              pause.setVisible(false);
+              btn_result.setVisible(false);
+              directorytxt.setVisible(false);
+               choose_btn.setVisible(false);
+               scanninggif.setVisible(false);
                full_rbtn.setSelected(false);
                jProgressBar1.setValue(0);
             percent.setText("0%");
             statuslbl.setText("");
             filesnos.setText("");
             lbl_freespacegained.setText("");
-            choose_txtlbl.hide();
+            choose_txtlbl.setVisible(false);
   }
   
   
@@ -3015,33 +3028,33 @@ public static int getFolderCount(File dir) {
 
         {   jTabbedPane1.removeTabAt(1);
             jTabbedPane1.insertTab("     Scan     ", new ImageIcon("MagnifyingGlass.png"), scanpane, null, 1);
-            quicktext1.hide();
+            quicktext1.setVisible(false);
 
-            choose_txtlbl.hide();
-            startscan_btn.show();
+            choose_txtlbl.setVisible(false);
+            startscan_btn.setVisible(true);
             jTabbedPane1.setSelectedIndex(1);
-            directorytxt.hide();
-            choose_btn.hide();
-            scanninggif.hide();
+            directorytxt.setVisible(false);
+            choose_btn.setVisible(false);
+            scanninggif.setVisible(false);
             full_rbtn.setSelected(false);
             jProgressBar1.setValue(0);
             percent.setText("0%");
             statuslbl.setText("");
             filesnos.setText("");
             lbl_freespacegained.setText("");
-             btn_result.hide();
+             btn_result.setVisible(false);
         }
 
         else if(custom_rbtn.isSelected()){
             jTabbedPane1.removeTabAt(1);
             jTabbedPane1.insertTab("     Scan     ", new ImageIcon("MagnifyingGlass.png"), scanpane, null, 1);
-            quicktext1.hide();
+            quicktext1.setVisible(false);
             jTabbedPane1.setSelectedIndex(1);
-            directorytxt.show();
-            choose_btn.show();
-            choose_txtlbl.hide();
-            startscan_btn.show();
-            scanninggif.hide();
+            directorytxt.setVisible(true);
+            choose_btn.setVisible(true);
+            choose_txtlbl.setVisible(false);
+            startscan_btn.setVisible(true);
+            scanninggif.setVisible(false);
             custom_rbtn.setSelected(false);
             jProgressBar1.setValue(0);
             percent.setText("0%");
@@ -3049,27 +3062,27 @@ public static int getFolderCount(File dir) {
             filesnos.setText("");
             lbl_freespacegained.setText("");
             directorytxt.setText("");
-            choose_txtlbl.show();
-            btn_result.hide();
+            choose_txtlbl.setVisible(true);
+            btn_result.setVisible(false);
         }
         else 
         {   jTabbedPane1.removeTabAt(1);
             jTabbedPane1.insertTab("     Scan     ", new ImageIcon("MagnifyingGlass.png"), scanpane, null, 1);
-            quicktext1.show();
+            quicktext1.setVisible(true);
 
-            startscan_btn.show();
+            startscan_btn.setVisible(true);
             jTabbedPane1.setSelectedIndex(1);
-            directorytxt.hide();
-            choose_btn.hide();
-            scanninggif.hide();
+            directorytxt.setVisible(false);
+            choose_btn.setVisible(false);
+            scanninggif.setVisible(false);
             full_rbtn.setSelected(false);
             jProgressBar1.setValue(0);
             percent.setText("0%");
             statuslbl.setText("");
             filesnos.setText("");
             lbl_freespacegained.setText("");
-            choose_txtlbl.hide();
-            btn_result.hide();
+            choose_txtlbl.setVisible(false);
+            btn_result.setVisible(false);
         }
         
       
