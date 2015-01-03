@@ -15,16 +15,16 @@ import org.apache.commons.io.FileUtils;
 
     
 public class gui extends javax.swing.JFrame {
-private ProgressInfinite taskInfinite;
-private ProgressInfinite2 taskInfinite2;
+ProgressInfinite taskInfinite;
+ProgressInfinite2 taskInfinite2;
 int firsttime=0,result_tab=0,edit_tab=0,scan_tab=0;
 int j=0,z=0,ext_no=0;
 long freeSpace,totalSpace,usedSpace,size=0,m=0,mem=0,x,hours,minutes,seconds;
 int errors;
 String filename;
 int recoverspace=0,resme_btn=0;
-private boolean abortProcessing;
-private boolean pauseProcessing;
+boolean abortProcessing;
+boolean pauseProcessing;
 
 
 //Thread t=new Thread();
@@ -3108,6 +3108,8 @@ public static int getFolderCount(File dir) {
     
         //</editor-fold>
 
+        
+        
         /* Create and display the form */
          try{
           UIManager.setLookAndFeel(new SyntheticaAluOxideLookAndFeel());

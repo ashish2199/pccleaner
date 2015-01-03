@@ -6,8 +6,12 @@
 
 /**
  *
- * @author LG-12
+ * @author Ashish Padalkar
  */
-public class fileio {
+public class scanner {
+    int i;
     
+    public void sout(int i){
+        
+    }
 }
