@@ -1,8 +1,6 @@
 Friends PC Cleaner
 =========
 
-----------
-
 It is basically cleans temporary files.
 
 It is a PC cleanup and optimization tool that will remove system clutter, make your PC run faster and even protect your privacy. 
@@ -21,5 +19,17 @@ It is a PC cleanup and optimization tool that will remove system clutter, make y
 - Registration module
 
 ##Screenshots
+
+ ![homescreen](http://i.imgur.com/B0XAdZX.png)
+ 
+![Scan Tab](http://i.imgur.com/Jpb4mRi.png)
+
+![results Tab](http://i.imgur.com/eFPifMj.png)
+
+![results Tab](http://i.imgur.com/GM46Vwa.png)
+
+![pendrive format tool](http://i.imgur.com/l2BwNdf.png)
+
+![Registration page](http://i.imgur.com/OmE9l0z.png)
 
  
