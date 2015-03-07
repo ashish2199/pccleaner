@@ -18,7 +18,21 @@ It is a PC cleanup and optimization tool that will remove system clutter, make y
 - Autostart options when used makes the application start when the when windows is loaded.
 - Registration module
 
-##Screenshots
+#Authors#
+
+##Ashish Padalkar 
+ Email:ashish2199@gmail.com 
+ Github:https://github.com/ashish2199
+##Hemant Nigam    
+ Email:h.nigam654@gmail.com
+##Neeraj Kumar    
+ Email:neerajkumarmsit@gmail.com 
+ Github:https://github.com/Neerajkumar23
+##Vinayak Sharma  
+ Email:vinayaksharma280@gmail.com 
+ Github:https://github.com/vinayaksharma280
+
+#Screenshots
 
 ![homescreen](http://i.imgur.com/B0XAdZX.png)
  
@@ -34,9 +48,4 @@ It is a PC cleanup and optimization tool that will remove system clutter, make y
 
 ![creators ](http://i.imgur.com/JlBRmfT.png?1) 
 
-#Authors#
-
-##Ashish Padalkar Email:ashish2199@gmail.com Github:https://github.com/ashish2199
-##Hemant Nigam    Email:h.nigam654@gmail.com
-##Vinayak Sharma  Email:vinayaksharma280@gmail.com Github:https://github.com/vinayaksharma280
-##Neeraj Kumar    Email:neerajkumarmsit@gmail.com
+ 
