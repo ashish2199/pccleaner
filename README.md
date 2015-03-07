@@ -20,7 +20,7 @@ It is a PC cleanup and optimization tool that will remove system clutter, make y
 
 ##Screenshots
 
- ![homescreen](http://i.imgur.com/B0XAdZX.png)
+![homescreen](http://i.imgur.com/B0XAdZX.png)
  
 ![Scan Tab](http://i.imgur.com/Jpb4mRi.png)
 
@@ -32,4 +32,11 @@ It is a PC cleanup and optimization tool that will remove system clutter, make y
 
 ![Registration page](http://i.imgur.com/OmE9l0z.png)
 
- 
+![creators ](http://i.imgur.com/JlBRmfT.png?1) 
+
+#Authors#
+
+##Ashish Padalkar Email:ashish2199@gmail.com Github:https://github.com/ashish2199
+##Hemant Nigam    Email:h.nigam654@gmail.com
+##Vinayak Sharma  Email:neerajkumarmsit@gmail.com
+##Neeraj Kumar    Email:vinayaksharma280@gmail.com
