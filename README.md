@@ -25,6 +25,7 @@ It is a PC cleanup and optimization tool that will remove system clutter, make y
  Github:https://github.com/ashish2199
 ##Hemant Nigam    
  Email:h.nigam654@gmail.com
+ Github:https://github.com/hemantnigam
 ##Neeraj Kumar    
  Email:neerajkumarmsit@gmail.com 
  Github:https://github.com/Neerajkumar23
