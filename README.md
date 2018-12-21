@@ -20,16 +20,16 @@ It is a PC cleanup and optimization tool that will remove system clutter, make y
 
 #Authors#
 
-##Ashish Padalkar 
+## Ashish Padalkar ##
  Email:ashish2199@gmail.com 
  Github:https://github.com/ashish2199
-##Hemant Nigam    
+## Hemant Nigam ##
  Email:h.nigam654@gmail.com
  Github:https://github.com/hemantnigam
-##Neeraj Kumar    
+## Neeraj Kumar ##    
  Email:neerajkumarmsit@gmail.com 
  Github:https://github.com/Neerajkumar23
-##Vinayak Sharma  
+## Vinayak Sharma ##  
  Email:vinayaksharma280@gmail.com 
  Github:https://github.com/vinayaksharma280
 
