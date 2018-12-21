@@ -18,7 +18,7 @@ It is a PC cleanup and optimization tool that will remove system clutter, make y
 - Autostart options when used makes the application start when the when windows is loaded.
 - Registration module
 
-#Authors#
+# Authors #
 
 ## Ashish Padalkar ##
  Email:ashish2199@gmail.com 
